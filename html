@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Budines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: #333;
+        }
+        header {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .budin {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+        .budin:hover {
+            transform: scale(1.05);
+        }
+        .budin img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .budin h3 {
+            margin: 15px 0;
+        }
+        .budin p {
+            color: #666;
+        }
+        .budin button {
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .budin button:hover {
+            background-color: #e65c54;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tienda de Budines</h1>
+    </header>
+    <div class="container">
+        <h2>Elige tu budín favorito</h2>
+        <div class="budin">
+            <img src="budin1.jpg" alt="Budín de Limón">
+            <h3>Budín de Limón</h3>
+            <p>Delicioso budín de limón, perfecto para acompañar con una taza de té.</p>
+            <button onclick="enviarWhatsApp('Budín de Limón')">Elegir</button>
+        </div>
+        <div class="budin">
+            <img src="budin2.jpg" alt="Budín de Chocolate">
+            <h3>Budín de Chocolate</h3>
+            <p>Irresistible budín de chocolate, ideal para los amantes del chocolate.</p>
+            <button onclick="enviarWhatsApp('Budín de Chocolate')">Elegir</button>
+        </div>
+        <div class="budin">
+            <img src="budin3.jpg" alt="Budín de Vainilla">
+            <h3>Budín de Vainilla</h3>
+            <p>Clásico budín de vainilla, suave y delicioso, para cualquier ocasión.</p>
+            <button onclick="enviarWhatsApp('Budín de Vainilla')">Elegir</button>
+        </div>
+    </div>
+    <script>
+        function enviarWhatsApp(budin) {
+            var numero = '2477683326'; // Reemplaza con tu número de WhatsApp en formato internacional sin el signo "+"
+            var mensaje = `Hola, me gustaría pedir un ${budin}.`;
+            var url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
